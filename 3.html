@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="format-detection" content="email=no,telephone=no,address=no">
+<title>=^.^=</title>
+<style>
+@media (min-width: 681px) {
+  .someText {
+    font-size: var( --font-size-l, 16px );
+  }
+}
+@media (max-width: 680px) {
+  .someText {
+    font-size: var( --font-size-s, 12px );
+  }
+}
+</style>
+</head>
+<body>
+
+<p class="someText">
+  未指定テキスト
+</p>
+
+<p class="someText" style="--font-size-l: 20px; --font-size-s: 10px;">
+  変数で上書きテキスト
+</p>
+
+</body>
+</html>

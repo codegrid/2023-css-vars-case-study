@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="format-detection" content="email=no,telephone=no,address=no">
+<title>=^.^=</title>
+<style>
+body {
+  background: url( "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAQMAAABJtOi3AAAABlBMVEXMzMz////TjRV2AAAAE0lEQVR4AWNgYPj/n4oElU1jAADtvT/BfzVwSgAAAABJRU5ErkJggg==" );
+}
+
+.someBox {
+  —enable-invert: 0;
+  filter: invert( calc( 1 * var( --enable-invert ) ) );
+
+  color: #000;
+  background: rgba( 255, 255, 255, 0.5 );
+}
+</style>
+</head>
+<body>
+
+<div class="someBox">
+  テキスト（通常）
+</div>
+
+<div class="someBox" style="--enable-invert: 1;">
+  テキスト（反転）
+</div>
+
+</body>
+</html>

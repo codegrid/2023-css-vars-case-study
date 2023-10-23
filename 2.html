@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="format-detection" content="email=no,telephone=no,address=no">
+<title>=^.^=</title>
+<style>
+:root {
+  --icon-colored-arrow-right: url( "data:image/svg+xml,%3Csvg height=%22128%22 viewBox=%220 0 128 128%22 width=%22128%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath d=%22m4 57.86h44.97v13.25h-44.97z%22 fill=%22%23f14e23%22/%3E%3Cpath d=%22m56.86 25.24v15.29l40.65 23.47-40.65 23.47v15.29l67.14-38.76z%22 fill=%22%23fede00%22/%3E%3Cpath d=%22m26.49 25.98v15l39.86 23.02-39.86 23.02v15l65.84-38.02z%22 fill=%22%232cafe5%22/%3E%3C/svg%3E" );
+}
+
+.someButton {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: #c6e7fc;
+}
+
+.someButton::after {
+  content: '';
+  display: block;
+  width: 1.4em;
+  height: 1.4em;
+  margin-left: 0.5em;
+  background: var( --icon-colored-arrow-right ) 0 0 / 100% 100%
+}
+</style>
+</head>
+<body>
+
+<a class="someButton">
+  リンクボタン
+</a>
+
+</body>
+</html>

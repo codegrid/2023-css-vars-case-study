@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="format-detection" content="email=no,telephone=no,address=no">
+<title>=^.^=</title>
+<style>
+:root {
+  --shadow-color: orange;
+}
+
+.someText {
+  --shadow: 0 0 0.5em var( --shadow-color );
+  text-shadow: var( --shadow );
+}
+</style>
+</head>
+<body>
+
+<div class="someText" style=" --shadow-color: green;">
+  テキスト
+</div>
+
+<div class="someText" style=" --shadow-color: #00008b;">
+  テキスト
+</div>
+
+</body>
+</html>

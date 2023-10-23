@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="format-detection" content="email=no,telephone=no,address=no">
+<title>=^.^=</title>
+<style>
+:root {
+  --scrollbar-width: 0;
+}
+
+body {
+  margin: 0;
+  overflow-y: scroll;
+}
+
+.mySection {
+  width: calc( 100vw - var( --scrollbar-width ) );
+  background: orange;
+}
+</style>
+<script type="module">
+const scrollbarWidth = ( () => {
+
+  const outer = document.createElement( 'div' );
+  outer.style.visibility = 'hidden';
+  outer.style.overflow = 'scroll'; // forcing scrollbar to appear
+  document.body.appendChild( outer );
+
+  const inner = document.createElement( 'div' );
+  outer.appendChild( inner );
+
+  const scrollbarWidth = ( outer.offsetWidth - inner.offsetWidth );
+
+  outer.remove();
+
+  return scrollbarWidth;
+
+} )();
+
+document.documentElement.style.setProperty( '--scrollbar-width', `${ scrollbarWidth }px` );
+</script>
+</head>
+<body>
+
+注意: macOS や iOS の場合、意図的にスクロールバーを表示していない場合は、スクロールバー幅は常に 0 です。
+
+<div class="mySection">
+  幅100%セクション
+</div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="format-detection" content="email=no,telephone=no,address=no">
+<title>=^.^=</title>
+<style>
+.someBox {
+  --rotate: 45deg;
+  rotate: var( --rotate );
+  animation: inViewAnim 1s;
+
+  width: 100px;
+  height: 100px;
+  background: orange;
+}
+
+@keyframes inViewAnim {
+  0% {
+    rotate: calc( var( --rotate ) - 180deg );
+  }
+  100% {
+    rotate: calc( var( --rotate ) - 0deg );
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="someBox">
+  テキスト
+</div>
+
+</body>
+</html>

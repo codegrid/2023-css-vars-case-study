@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="format-detection" content="email=no,telephone=no,address=no">
+<title>=^.^=</title>
+<style>
+.myBox {
+  --time-scale: 1; /* 時間をやはめたい時などの時間調整 */
+  --duration: 2000ms;
+  width: 100px;
+  height: 100px;
+  background: orange;
+  animation:
+    myBoxAnimation1 calc( ( var( --duration ) * 0.5 ) * var( --time-scale ) ) ease-in-out both,
+    myBoxAnimation2 calc( var( --duration ) * 0.5 * var( --time-scale ) ) calc( var( --duration ) * 0.5 * var( --time-scale ) ) ease-in-out both;
+}
+@keyframes myBoxAnimation1 {
+  0% {
+    opacity: 0;
+    scale: 0;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes myBoxAnimation2 {
+  0% {
+    background: orange;
+  }
+  100% {
+    background: pink;
+  }
+}
+</style>
+</head>
+<body>
+<div class="myBox" style="--time-scale: 1.1;">
+  幅100%セクション
+</div>
+<script type="module">
+const el = document.querySelector( '.myBox' );
+const durationString = window.getComputedStyle( el ).getPropertyValue( '--duration' );
+const timeScaleString = window.getComputedStyle( el ).getPropertyValue( '--time-scale' );
+const duration = spritCssTimeUnit( durationString );
+const timeScale = spritCssTimeUnit( timeScaleString );
+setTimeout( () => {
+  alert( 'アニメーションが終わったのでなにかする' )
+}, duration * timeScale );
+function spritCssTimeUnit( cssTimeUnit ) {
+  return (
+    /ms$/.test( cssTimeUnit ) ? ( cssTimeUnit.replace( /ms$/, '' ) * 1 ) :
+    /s$/.test( cssTimeUnit ) ? ( cssTimeUnit.replace( /s$/, '' ) * 1000 ) :
+    1
+  );
+};
+</script>
+</body>
+</html>

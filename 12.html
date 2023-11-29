@@ -13,15 +13,15 @@
   height: 100px;
   background: orange;
   animation:
-    myBoxAnimation1 calc( ( var( --duration ) * 0.5 ) * var( --time-scale ) ) ease-in-out both,
-    myBoxAnimation2 calc( var( --duration ) * 0.5 * var( --time-scale ) ) ease-in-out both;
+    myBoxAnimation1 calc( var( --duration ) * var( --time-scale ) ) ease-in-out both,
+    myBoxAnimation2 calc( var( --duration ) * var( --time-scale ) ) ease-in-out both;
 }
 @keyframes myBoxAnimation1 {
   0% {
     opacity: 0;
     scale: 0;
   }
-  100% {
+  50%, 100% {
     opacity: 1;
     scale: 1;
   }
@@ -47,12 +47,10 @@ const timeScaleString = window.getComputedStyle( el ).getPropertyValue( '--time-
 const duration = spritCssTimeUnit( durationString );
 const timeScale = + timeScaleString;
 
-console.log( duration, timeScaleString, timeScale );
 setTimeout( () => {
   alert( 'アニメーションが終わったのでなにかする' )
 }, duration * timeScale );
 function spritCssTimeUnit( cssTimeUnit ) {
-  console.log( cssTimeUnit );
   return (
     /ms$/.test( cssTimeUnit ) ? ( cssTimeUnit.replace( /ms$/, '' ) * 1 ) :
     /s$/.test( cssTimeUnit ) ? ( cssTimeUnit.replace( /s$/, '' ) * 1000 ) :
